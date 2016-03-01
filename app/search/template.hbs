@@ -1,5 +1,5 @@
-<h1>Results</h1>
+{{query-info search=model.search number=model.number_of_results}}
 
-{{#each model as |bill|}}
+{{#each model.bills as |bill|}}
   {{bill-tile bill=bill}}
 {{/each}}
