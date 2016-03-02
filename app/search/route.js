@@ -19,8 +19,6 @@ export default Ember.Route.extend({
           search_date: params.date
         };
     });
-
-
   },
 
   actions: {

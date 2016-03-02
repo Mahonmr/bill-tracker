@@ -1,0 +1,54 @@
+<h3>
+  <a href="{{model.sources.firstObject.url}}">{{model.bill_id}}</a>
+</h3>
+<h3>{{model.title}}</h3>
+<p>
+  {{model.summary}}
+</p>
+
+{{#if model.votes}}
+  <h3>Most Recent Vote:</h3>
+  <dl class="dl-horizontal">
+    <dt>Chamber</dt>
+    <dd>{{chamber}}</dd>
+    <dt>Motion</dt>
+    <dd>{{model.votes.lastObject.motion}}</dd>
+    <dt>Yes Votes</dt>
+    <dd>{{model.votes.lastObject.yes_count}}</dd>
+    <dt>No Votes</dt>
+    <dd>{{model.votes.lastObject.no_count}}</dd>
+    <dt>Other Votes</dt>
+    <dd>{{model.votes.lastObject.other_count}}</dd>
+  </dl>
+
+  <div class="col-md-3 well">
+    <h4>Yes Votes:</h4>
+    <ul>
+      {{#each model.votes.lastObject.yes_votes as |voter|}}
+      <li>{{voter.name}}</li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="col-md-3 col-md-offset-1 well">
+    <h4>No Votes:</h4>
+    <ul>
+      {{#each model.votes.lastObject.no_votes as |voter|}}
+      <li>{{voter.name}}</li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="col-md-3 col-md-offset-1 well">
+    <h4>Other Votes:</h4>
+    <ul>
+      {{#each model.votes.lastObject.other_votes as |voter|}}
+      <li>{{voter.name}}</li>
+      {{/each}}
+    </ul>
+  </div>
+  {{else}}
+    <p>
+      There have been no votes on this measure yet.
+    </p>
+{{/if}}
