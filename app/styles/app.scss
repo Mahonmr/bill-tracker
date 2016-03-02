@@ -1,3 +1,16 @@
+$border-radius-base: 0;
+$border-radius-small: 0;
+$border-radius-large: 0;
+
+$brand-primary: #012A86;
+$oregon-gold: #FEEA0D;
+$navbar-default-bg: $brand-primary;
+$navbar-default-toggle-border-color: $brand-primary;
+$navbar-default-link-color: $oregon-gold;
+$navbar-default-link-active-color: $oregon-gold;
+$navbar-default-toggle-icon-bar-bg: $oregon-gold;
+$navbar-default-toggle-hover-bg: transparent;
+
 @import 'bootstrap';
 
 .bill-tile {
@@ -8,4 +21,32 @@
 
 .search-query {
   font-style: italic;
+}
+
+.legislator-div {
+  border: 1px solid black;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.bill-session {
+  font-style: italic;
+  text-align: right;
+}
+
+.flag {
+  width: 100px;
+  height: 50px;
+  position: relative;
+  background-image: url('https://oregonflagregistry.files.wordpress.com/2015/02/oregon-reverse.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 770px) {
+  .bill-session {
+    text-align: left;
+  }
 }

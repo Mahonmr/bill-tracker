@@ -5,7 +5,8 @@ export default Ember.Route.extend({
     var lat = params.lat;
     var lng = params.lng;
 
-    var url = 'http://openstates.org/api/v1//legislators/geo/?lat=' + lat + '&long=' + lng + '&apikey=ad8985ad95754238a64c485cd36ae247';
+    var url = 'http://openstates.org/api/v1//legislators/geo/?lat=' + lat +
+    '&long=' + lng + '&apikey=ad8985ad95754238a64c485cd36ae247';
 
     return Ember.$.getJSON(url).then(function(response) {
       return response;
@@ -13,6 +14,10 @@ export default Ember.Route.extend({
   },
 
   actions: {
+    executeSearch(params) {
+      this.transitionTo('search', params.search, params.date);
+    },
+
     submitAddress(params) {
       var self = this;
 

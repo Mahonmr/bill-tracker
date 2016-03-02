@@ -1,10 +1,16 @@
 <h1>Your Legislators</h1>
 
 {{#each model as |legislator|}}
-  {{log legislator}}
-  <h2><a href="{{legislator.url}}" target=_blank>{{title legislator}} {{legislator.full_name}}</a></h2>
-  <h5><a href="mailto:{{legislator.email}}">{{legislator.email}}</a></h5>
-  <h5>{{legislator.party}}</h5>
-  <img src="{{legislator.photo_url}}" alt="{{legislator.full_name}}" />
-
+  <div class="legislator-div">
+    <div class="row">
+      <div class="col-sm-3">
+        <img src="{{legislator.photo_url}}" alt="{{legislator.full_name}}" />
+      </div>
+      <div class="col-sm-9">
+        <h2><a href="{{legislator.url}}" target=_blank>{{title legislator}} {{legislator.full_name}}</a></h2>
+        <h5><a href="mailto:{{legislator.email}}">{{legislator.email}}</a></h5>
+        <h5>{{legislator.party}}</h5>
+      </div>
+    </div>
+  </div>
 {{/each}}
