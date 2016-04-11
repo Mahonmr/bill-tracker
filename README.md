@@ -1,7 +1,18 @@
-# Bill-tracker
+# Bill Tracker
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Bill Tracker uses the [Open States](http://openstates.org) API to search information about the Oregon State Legislature. 
+
+Bill Tracker was created as an exercise in the use of APIs to retrieve JSON data in Ember.js apps.
+
+## Features
+
+* Look up state legislators by address
+* Look up bills by keyword search and date of last legislative action
+* View bill details and links to more information
+
+## Technologies Used
+
+Ember.js, JavaScript, SASS, Bootstrap.
 
 ## Prerequisites
 
@@ -15,19 +26,19 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
+* `git clone https://github.com/JeffreyRuder/salem-sunshine.git`
+* Change into the new directory
 * `npm install`
 * `bower install`
+* Acquire API keys for Google Geocode and [Open States](http://openstates.org)
+* Insert the following properties into the `ENV` variable in `bill-tracker/config/environment.js`:
+  * `OPENSTATES_API_KEY: 'your key here'`
+  * `GOOGLE_GEOCODE_API_KEY: 'your key here'`
 
 ## Running / Development
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
 
 ### Running Tests
 
@@ -39,10 +50,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
-
-Specify what it takes to deploy your app.
-
 ## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
@@ -50,4 +57,3 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
